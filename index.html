@@ -3,119 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Employee Register</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Register</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="flex items-center justify-center min-h-screen bg-cover bg-center" 
-      style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20250205/pngtree-soft-pastel-floral-design-light-blue-background-image_16896113.jpg');">
+<body class="relative min-h-screen flex items-center justify-center bg-cover bg-center" 
+      style="background-image: url('https://i.pinimg.com/736x/59/9c/d6/599cd6e2b2b36753d60da13b3c418127.jpg');">
 
 
-  <button onclick="logout()" 
-          class="absolute top-4 right-6 px-3 py-1 bg-red-600 hover:bg-red-700 text-white text-xs font-bold rounded shadow-md">
-    Logout
-  </button>
+  <div class="absolute inset-0 bg-gradient-to-r from-pink-100 to-purple-200 opacity-80"></div>
 
+  <div class="relative w-full max-w-md bg-white p-8 rounded-xl shadow-xl">
+    <h1 class="text-3xl font-bold text-center text-purple-700 mb-8">Register HERE</h1>
 
-  <div class="flex gap-8 flex-wrap justify-center">
+    <form>
+      <div class="grid md:grid-cols-2 md:gap-6">
+      
+        <div class="relative z-0 w-full mb-5 group">
+          <input type="text" id="floating_first_name" placeholder=" " required
+            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 focus:outline-none focus:ring-0 focus:border-pink-500 peer" />
+          <label for="floating_first_name"
+            class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-pink-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+            First name</label>
+        </div>
 
-  
-    <div class="bg-white/90 p-6 rounded-xl shadow-xl w-80">
-      <h2 class="text-xl font-semibold text-gray-700 text-center mb-4">Register Employee</h2>
-      <input type="text" id="empid" placeholder="Employee ID" 
-             class="w-full px-3 py-2 mb-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400">
-      <input type="text" id="empname" placeholder="Employee Name" 
-             class="w-full px-3 py-2 mb-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400">
-      <input type="text" id="empaddr" placeholder="Address" 
-             class="w-full px-3 py-2 mb-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400">
-      <input type="text" id="empdesg" placeholder="Designation" 
-             class="w-full px-3 py-2 mb-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400">
-      <input type="text" id="empexp" placeholder="Experience" 
-             class="w-full px-3 py-2 mb-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400">
-      <input type="text" id="empsal" placeholder="Salary" 
-             class="w-full px-3 py-2 mb-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400">
+       
+        <div class="relative z-0 w-full mb-5 group">
+          <input type="text" id="floating_last_name" placeholder=" " required
+            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 focus:outline-none focus:ring-0 focus:border-pink-500 peer" />
+          <label for="floating_last_name"
+            class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-pink-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+            Last name</label>
+        </div>
 
-      <button onclick="addEmployee()" 
-              class="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-md shadow-md">
-        Register
-      </button>
-    </div>
+        <div class="relative z-0 w-full mb-5 group col-span-2">
+          <input type="email" id="floating_email" placeholder=" " required
+            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 focus:outline-none focus:ring-0 focus:border-pink-500 peer" />
+          <label for="floating_email"
+            class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-pink-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+            Email address</label>
+        </div>
 
-  
-    <div class="bg-white/90 p-6 rounded-xl shadow-xl w-80">
-      <h2 class="text-xl font-semibold text-gray-700 text-center mb-4">Search Employee</h2>
-      <input type="text" id="searchId" placeholder="Enter Employee ID" 
-             class="w-full px-3 py-2 mb-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-      <button onclick="searchEmployee()" 
-              class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md shadow-md">
-        Search
-      </button>
-      <div id="searchResult" class="mt-3 p-3 bg-gray-100 rounded-md text-sm text-gray-700"></div>
-    </div>
+       
+        <div class="relative z-0 w-full mb-5 group">
+          <input type="password" id="floating_password" placeholder=" " required
+            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 focus:outline-none focus:ring-0 focus:border-pink-500 peer" />
+          <label for="floating_password"
+            class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-pink-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+            Password</label>
+        </div>
 
+        <div class="relative z-0 w-full mb-5 group">
+          <input type="password" id="floating_repeat_password" placeholder=" " required
+            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 focus:outline-none focus:ring-0 focus:border-pink-500 peer" />
+          <label for="floating_repeat_password"
+            class="absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-pink-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+            Confirm password</label>
+        </div>
+      </div>
+
+   
+      <div class="text-center mt-6">
+        <button type="button" onclick="register()"
+          class="w-full bg-pink-600 hover:bg-pink-700 text-white font-medium rounded-lg text-sm px-5 py-2.5 transition">
+          Submit
+        </button>
+      </div>
+    </form>
   </div>
 
+
   <script>
-    function addEmployee(){
-      const employee = {
-        id: empid.value,
-        name: empname.value,
-        address: empaddr.value,
-        designation: empdesg.value,
-        experience: empexp.value,
-        salary: empsal.value
+    function register() {
+      const userDetails = {
+        firstName: floating_first_name.value.trim(),
+        lastName: floating_last_name.value.trim(),
+        email: floating_email.value.trim(),
+        password: floating_password.value,
+        cpassword: floating_repeat_password.value
       };
 
-      if(employee.id==="" || employee.name==="" || employee.address==="" || 
-         employee.designation==="" || employee.experience==="" || employee.salary==="") {
-          alert("Please fill the form");
-      } 
-      else {
-          if(localStorage.getItem(employee.id)) {
-              alert("Employee already existing");
-          } 
-          else {
-              localStorage.setItem(employee.id, JSON.stringify(employee));
-              alert("Employee added successfully...");
-          }
+      if (!userDetails.firstName || !userDetails.lastName || !userDetails.email || !userDetails.password || !userDetails.cpassword) {
+        alert("❌ Please fill the form");
+        return;
       }
 
-    }
-function searchEmployee() {
-  let skey = searchId.value;   
-  console.log(skey);
+      if (userDetails.password !== userDetails.cpassword) {
+        alert("❌ Passwords do not match!");
+        return;
+      }
 
-  let resultDiv = document.getElementById("searchResult"); 
+      const { firstName, lastName, email, password } = userDetails;
+      localStorage.setItem("userData", JSON.stringify({ firstName, lastName, email, password }));
 
-  if (skey in localStorage) {
-    let emp = JSON.parse(localStorage.getItem(skey));
-    console.log(emp);
-
-    resultDiv.innerText = 
-      `ID: ${emp.id}
-Name: ${emp.name}
-Address: ${emp.address}
-Designation: ${emp.designation}
-Experience: ${emp.experience}
-Salary: ${emp.salary}`;
-  } else {
-    alert("not found");
-  }
-}
-
-
-
-
-
- 
-
-
-
-
-    function logout(){
-      alert("You have logged out!");
-      
-          window.location.href = "login.html"; 
-     
+      alert("✅ Registration successful! Please login.");
+      window.location.href = "login.html";
     }
   </script>
 
